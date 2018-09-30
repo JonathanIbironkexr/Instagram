@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
             if user != nil {
                 print("Sending you back in, happy Regraming!")
                 self.performSegue(withIdentifier: "loginsegue", sender: nil)
+                
             }
             
         }

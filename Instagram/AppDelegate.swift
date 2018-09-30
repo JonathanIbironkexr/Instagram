@@ -24,7 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // set to nil assuming you have not set clientKey
                 configuration.server = "https://aqueous-woodland-58985.herokuapp.com/parse"
             })
+            
         )
+        
+        if PFUser.current() != nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            // view controller currently being set in Storyboard as default will be overridden
+            window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "AuthenticatedViewController")
+        }
         return true
     }
 
