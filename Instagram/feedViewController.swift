@@ -12,25 +12,17 @@ class feedViewController: UIViewController {
     
     class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
-        let vc = UIImagePickerController()
-        vc.delegate = self
-        vc.allowsEditing = true
-        vc.sourceType = UIImagePickerControllerSourceType.camera
-        
-        self.present(vc, animated: true, completion: nil)
-        
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-        print("Camera is available 📸")
-        vc.sourceType = .camera
-        } else {
-        print("Camera 🚫 available so we will use photo library instead")
-        vc.sourceType = .photoLibrary
+        @IBAction func logoutbuttone(_ sender: Any) {
+           
+            }
+            
         }
-    }
-    
+        
+        
+       
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
