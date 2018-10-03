@@ -9,17 +9,7 @@
 import UIKit
 import Parse
 
-class InstagramPostTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var photoView: PFImageView!
-    
-    var instagramPost: PFObject! {
-        didSet {
-            self.photoView.file = instagramPost["image"] as? PFFile
-            self.photoView.loadInBackground()
-        }
-    }
-}
+
 class feedViewController: UIViewController {
     
     @IBOutlet weak var mainfeedview: UIImageView!
@@ -43,6 +33,7 @@ class feedViewController: UIViewController {
         }
         }
         }
+    }
         
         
         
@@ -66,5 +57,5 @@ class feedViewController: UIViewController {
     */
 
 }
-}
+
 
