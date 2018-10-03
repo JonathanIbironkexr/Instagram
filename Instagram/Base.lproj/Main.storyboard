@@ -110,7 +110,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log Out?"/>
                                 <connections>
-                                    <action selector="logoutbutton:" destination="5WK-NZ-5Nm" eventType="touchUpInside" id="p6h-H9-sMe"/>
                                     <action selector="logoutbuttone:" destination="5WK-NZ-5Nm" eventType="touchUpInside" id="7Qv-pk-R1f"/>
                                 </connections>
                             </button>
