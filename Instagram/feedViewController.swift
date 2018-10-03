@@ -7,16 +7,44 @@
 //
 
 import UIKit
+import Parse
 
+class InstagramPostTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var photoView: PFImageView!
+    
+    var instagramPost: PFObject! {
+        didSet {
+            self.photoView.file = instagramPost["image"] as? PFFile
+            self.photoView.loadInBackground()
+        }
+    }
+}
 class feedViewController: UIViewController {
+    
+    @IBOutlet weak var mainfeedview: UIImageView!
+    @IBOutlet weak var logoutb: UIButton!
     
     class PhotoMapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
-        @IBAction func logoutbuttone(_ sender: Any) {
-           
-            }
-            
+        func postsfeed(){
+        // construct PFQuery
+        let query = Post.query()
+        query.orderByDescending("createdAt")
+        query.includeKey("author")
+        query.limit = 20
+        
+        // fetch data asynchronously
+        query.findObjectsInBackgroundWithBlock { (posts: [Post]?, error: NSError?) -> Void in
+        if let posts = posts {
+        // do something with the data fetched
+        } else {
+        // handle error
         }
+        }
+        }
+        
+        
         
         
        
