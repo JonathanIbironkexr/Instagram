@@ -10,24 +10,17 @@ import UIKit
 
 class feedViewCell: UITableViewCell {
 
-    class InstagramPostTableViewCell: UITableViewCell {
-        
-        @IBOutlet weak var photoView: PFImageView!
-        
-        var instagramPost: PFObject! {
-            didSet {
-                self.photoView.file = instagramPost["image"] as? PFFile
-                self.photoView.loadInBackground()
-            }
-        }
-    }
+    @IBOutlet weak var cellcaption: UILabel!
+    @IBOutlet weak var photocell: UIImageView!
+    var indexPath: IndexPath?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool)
+    {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
